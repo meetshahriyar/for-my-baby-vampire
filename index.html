@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Vampire 🩷</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Aladin&family=Courgette&family=Poppins:wght@400;500&family=Rancho&display=swap" rel="stylesheet">
+
+<style>
+*{-webkit-tap-highlight-color:transparent}
+
+:root{
+    --bg1:#ff9acb;
+    --bg2:#ff69b4;
+    --btn:#ff2f92;
+    --text:#fff;
+}
+
+body.dark{
+    --bg1:#2b000f;
+    --bg2:#5a001e;
+    --btn:#ff4d9d;
+}
+
+body{
+    margin:0;
+    font-family:Caveat,sans-serif;
+    background:linear-gradient(135deg,var(--bg1),var(--bg2));
+    color:var(--text);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+    transition:background .6s;
+}
+
+.page{
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    width:100%;
+    height:100%;
+}
+.page.active{display:flex}
+
+h1{font-size:2.2em;margin-bottom:10px;max-width:90%}
+h2{font-size:1.4em}
+p{font-size:.9em;color:#ffd1e8}
+
+h1 { font-family: 'Aladin', cursive; font-weight: normal; }
+h2 { font-family: 'Courgette', cursive; }
+p { font-family: 'Poppins', sans-serif; }
+button { font-family: 'Poppins', sans-serif; font-weight: bold; }
+
+.red-text{color:#ff2e2e;font-weight:bold}
+
+img{
+    max-width:80vw;
+    border-radius:14px;
+    margin:15px 0;
+}
+
+.buttons{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+button{
+    padding:14px 28px;
+	font-family:'Poppins', sans-serif;
+    font-weight:bold;
+    font-size:1em;
+    min-width:220px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{transform:scale(1.1)}
+
+.btn-pink{background:var(--btn);color:#fff}
+.btn-green{background:#2ecc71;color:#fff}
+.btn-gray{background:#555;color:#fff}
+
+.big{transform:scale(1.6)}
+.bigger{transform:scale(2)}
+
+.names{
+    font-size:.95em;
+    line-height:1.5;
+    color:#ffe6f2;
+}
+
+.toggle{
+    position:fixed;
+    top:15px;
+    right:15px;
+    background:#00000055;
+    color:#fff;
+    border-radius:20px;
+    padding:8px 14px;
+    font-size:.8em;
+}
+
+/* HEARTS */
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:20px;
+opacity:.9;
+pointer-events:none;
+text-shadow:0 0 8px rgba(255,255,255,0.6);
+animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+from{transform:translateY(0)}
+to{transform:translateY(-110vh);opacity:0}
+}
+
+@media(max-width:480px){
+    h1{font-size:1.8em}
+    h2{font-size:1.2em}
+    button{font-size:.95em}
+}
+</style>
+</head>
+
+<body>
+
+<div class="toggle" onclick="toggleDark()">🩸 Vampire Mode</div>
+
+<!-- PASSWORD PAGE -->
+<div class="page active" id="lock">
+<h1>Enter The Password Madam!! 🗝️</h1>
+<p>(Guess What?😏 -- It's a very easy date)</p>
+<input id="pass" type="password" placeholder="DD MM YYYY"
+style="padding:12px;border-radius:10px;border:none;text-align:center;">
+<div class="buttons">
+<button class="btn-pink" onclick="unlock()">Enter</button>
+</div>
+</div>
+
+<!-- INTRO PAGE AFTER PASSWORD -->
+<div class="page" id="intro">
+<h1>Hello Little Vampire 👋</h1>
+<img src="https://media.giphy.com/media/vL8jVjKkqbVh2qdFj0/giphy.gif">
+<p style="font-size:1em; font-family: 'Rancho', cursive; font-weight: bold;">
+BTW Vampire! Yk?<br>
+you can try the "🩸 Vampire Mode" too,<br>
+At  top there is a button<br>
+tap that 👆 okay?
+</p>
+
+<div class="buttons">
+<button class="btn-pink" onclick="go('p1')">Send Hello to the Dumbhead</button>
+</div>
+</div>
+
+<!-- ... keep all your other pages intact ... -->
+
+<!-- MUSIC -->
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Fallback play button for iPhone autoplay -->
+<button id="playMusicBtn" style="display:none; position:fixed;top:10px;right:10px;padding:10px 15px;">Play Music 🎵</button>
+
+<script>
+function go(id){
+    document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    playMusic();
+}
+
+function unlock(){
+    if(document.getElementById("pass").value==="31 12 2025"){
+        go('intro');
+    }else alert("😮 Blehh - Wrong date 🚫");
+}
+
+function toggleDark(){
+    document.body.classList.toggle("dark");
+}
+
+function playMusic(){
+    const music = document.getElementById("music");
+    music.play().catch(err => {
+        // if autoplay blocked on iPhone, show button
+        document.getElementById("playMusicBtn").style.display = "block";
+    });
+}
+
+// Button fallback for iOS autoplay
+document.getElementById("playMusicBtn").addEventListener("click", () => {
+    const music = document.getElementById("music");
+    music.play();
+    document.getElementById("playMusicBtn").style.display="none";
+});
+
+// Ensure looping continues
+document.getElementById("music").addEventListener('ended', () => {
+    const music = document.getElementById("music");
+    music.currentTime = 0;
+    music.play();
+});
+
+// Hearts animation
+const emojis=["💗","💖","💕","✨","🦇","🦋","💖","🌻","🌷","🌸","🍁","🍫","✨","🎀","🎶","✨","🦇",
+"💫","🤍","🖤","🤎","💜","💙","💚","💛","🦇","🧡","❤️","💕","💞","✨","💝","💖","💗","✨","🦇","💌","💗","💖","💕","🦇","🦋","💖","🌻","🌷","🦇","🌸","🍁","🍫","✨","🎀","🎶","💫","🤍","🖤","🤎","💜","💙","💚","💛","🧡","❤️","💕","💞","💝","💖","💗","💌"];
+setInterval(()=>{
+    const h=document.createElement("div");
+    h.className="heart";
+    h.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    
+    h.style.left=Math.random()*100+"vw";
+    h.style.fontSize=(18 + Math.random()*22) + "px";
+    h.style.animationDuration=(4+Math.random()*4)+"s";
+    
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),8000);
+},300);
+</script>
+
+</body>
+</html>

@@ -149,6 +149,18 @@ style="padding:12px;border-radius:10px;border:none;text-align:center;">
 </div>
 </div>
 
+<!-- ... keep all your other pages intact ... -->
+
+<!-- MUSIC -->
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Fallback play button for iPhone autoplay -->
+<button id="playMusicBtn" style="display:none; position:fixed;top:10px;right:10px;padding:10px 15px;">Play Music 🎵</button>
+
+<script>
+
 <!-- INTRO PAGE AFTER PASSWORD -->
 <div class="page" id="intro">
 <h1>Hello Little Vampire 👋</h1>
@@ -165,21 +177,220 @@ tap that 👆 okay?
 </div>
 </div>
 
-<!-- ... keep all your other pages intact ... -->
+<!-- PAGE 1 -->
+<div class="page" id="p1">
+<h1>Gorgeousouras?</h1>
+
+<h2>
+Are You The Most Loveable <br>
+Most Charming & Most Edible<br>
+Most Bitable & Most Magnetic<br>
+Most Gorgeously-Pretty, Baby-Vampire Ever and Ever and Ever On Earth??
+</h2>
+<img src="https://media4.giphy.com/media/NBs1mJNW8qCPrsauIN/giphy.gif">
+<p class="red-text">👇 You can try to tap the "NO" Button, only If You Dare! Hmmuhhh! 👇</p>
+<div class="buttons">
+<button class="btn-gray" onclick="go('p2')">NO</button>
+<button class="btn-pink" onclick="go('psp')">YES</button>
+</div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="p2">
+<h1>WTH!! How Dare You Press The "NO"??? HUH???</h1>
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3FqMnlodGxxMGF0NW1na2RyODQ4ZGtvNG10c25lOGFmeGltdzRuMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aHFgDHucMrnPrXOQYl/giphy.gif">
+<p class="red-text">Let's Try Again 🔪</p>
+<div class="buttons">
+<button class="btn-pink" onclick="go('ps')">Try Again</button>
+</div>
+</div>
+
+<!-- PAGE Repeat -->
+<div class="page" id="ps">
+<h1>Gorgeousouras?</h1>
+
+<h2>
+    Are You The Most Loveable <br>
+    Most Charming & Most Edible<br>
+    Most Bitable & Most Magnetic<br>
+    Most Gorgeously-Pretty, Baby-Vampire Ever and Ever and Ever On Earth??
+</h2>
+<img src="https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyNnZ6YWp4cTBrNWRzZDJxcDRvbTE2aTYyZTdtcTh4OWR3enFkMDl0ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fijBLKqIQo4H6/giphy.gif">
+<p class="red-text">Now tap "YES" 👇 - 🔪🔪🔪</p>
+<div class="buttons">
+<button class="btn-gray" onclick="go('ps2')">NO</button>
+<button class="btn-pink" onclick="go('psp')">YES</button>
+</div>
+</div>
+
+<!-- PAGE Repeat 3 -->
+<div class="page" id="ps2">
+<h1>Gorgeousouras?</h1>
+
+<h2>
+    Are You The Most Loveable <br>
+    Most Charming & Most Edible<br>
+    Most Bitable & Most Magnetic<br>
+    Most Gorgeously-Pretty, Baby-Vampire Ever and Ever and Ever On Earth??
+</h2>
+<img src="https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUybGdzbmZreWd6enA3djc4cmIycHg4cHVneHNsMzJ2cTJqbXMxbHYzdCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/GAXXHdS0zXawVLOJLY/giphy.gif">
+<p class="red-text">WTH!😡You Clicked "No" Again???<br>
+Now you got only option left huhh!!<br>
+Tap the "YES" rn 👇 - 🔪🔪🔪</p>
+<div class="buttons">
+<button class="btn-pink" onclick="go('psp')">YES</button>
+</div>
+</div>
+
+<!-- PAGE SPCL -->
+<div class="page" id="psp">
+<h1>Good Girl - Awwwwww </h1>
+
+<img src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUycHllMHBsamFzZjF3Zm9uMWRycnhyOHMxNzg1dDcxOXBvMXFkbDFtZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JLOMjK4cg9ZmAULkQz/giphy.gif">
+
+<div class="buttons">
+<button class="btn-pink" onclick="go('p3')">Next😋😛😘</button>
+</div>
+
+</div>
+<!-- PAGE 3 -->
+<div class="page" id="p3">
+    <h1>Hey Vampire - Butterfly!!<br>
+        Are You MY BABY ???? 👉👈🥺</h1>
+    <div class="buttons">
+        <button class="btn-gray" onclick="go('p3a')">Ehhh I've Doubts<br>
+            so what about "No"?</button>
+        <button class="btn-pink" onclick="go('p4')">Undoubtedly Yesss!!<br>
+            I'm Your BABY</button>
+    </div>
+</div>
+
+<!-- PAGE 3 sp (NOW OUTSIDE) -->
+<div class="page" id="p3a">
+    <h1>Hey Vampire - Butterfly!!<br>
+        Are You MY BABY ???? 👉👈🥺</h1>
+    <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2Z2b2Z5bzU4OHRleDVkdWRmaXAzYjV0MWd3ODN1NTk0OHU1d2xwMiZlcD12MV9pbnRlcm5hbF9naWQmY3Q9Zw/RFEBh5oGxGmft4pNQw/giphy.gif">
+
+<p style="font-size:1em; font-family: 'Rancho', cursive; font-weight: bold;">
+You tapped on No again? nahh??<br>
+so now as a punishment!! you got only one option here!!😠👇
+</p>
+
+    
+    <div class="buttons">
+        <button class="btn-pink" onclick="go('p3b')">Undoubtedly Yesss!!<br>
+            I'm Your BABY</button>
+    </div>
+</div>
+
+<!-- PAGE 3 sp (NOW OUTSIDE 2) -->
+<div class="page" id="p3b">
+    <h1>Awwww Babyyyyyyy Now I'm choosen<br>
+        I've something to tell you<br>
+        Do you wanna know?
+        </h1>
+    <img src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyMWtxaXg5enJzZzNsZ3oxeHpmMHlydjMzZTJqcGRmYnlnaGQzdXM1NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/cKzxbcOTpApGQMzX1T/giphy.gif">
+
+<p style="font-size:1em; font-family: 'Rancho', cursive; font-weight: bold;">
+Tap the below button👇🤫
+</p>
+
+    
+    <div class="buttons">
+        <button class="btn-pink" onclick="go('p4')">Yes What it is??</button>
+    </div>
+</div>
+
+
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="p4">
+<h1>I Love You My Baby</h1>
+<div class="names">
+    You are....<br>
+    My Baby<br>
+My Vampire | My Butterfly<br>
+My Sunshine | My Shona<br>
+My Sunflower | My Lily<br>
+My Weasel | My Otter<br>
+My Billi Ki Bacchi<br>
+My Orange Cat<br>
+My White Cat<br>
+My Smile | My Peace<br>
+My Sweetheart | Apple Of My Eyes<br>
+My Archive Box<br>
+My Home<br>
+My Everythinggg....
+</div>
+<h2>So! Do You Love Me???</h2>
+<div class="buttons">
+<button class="btn-pink" onclick="go('p5')">YES I LOVE YOU😋</button>
+</div>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="p5">
+<h1>Now tell me!!<br>
+Do you wish to stay with me??</h1>
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaWM3cHdodWh2NG1kZmZoamwzOW1qYm1ka3dnZjBwcjJnMjF2YnpvaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/T7fVPrsF8TYMQTF9VJ/giphy.gif">
+<div class="buttons">
+<button class="btn-pink" onclick="go('p6')">Yes</button>
+</div>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page" id="p6">
+<h1>Sure?<br>
+You wanna stay with me FOREVER???</h1>
+<div class="buttons">
+<button class="btn-pink big" onclick="go('p7')">Yes Baby</button>
+</div>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page" id="p7">
+<h1>WARNING: I'm totally cracked and crazy 😳<br>You sure you wanna stay with me FOREVER?</h1>
+<img src="https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyaTAzcHczZjExNnlvMmF2dWc1cTYxbmg5eXQycHRjZnB2b2ZyaXo5YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT3i1gnm8BTXgtH6py/giphy.gif">
+<div class="buttons">
+<button class="btn-pink bigger" onclick="go('p8')">Yes</button>
+</div>
+</div>
+
+<!-- PAGE 8 -->
+<div class="page" id="p8">
+<h1>Mmhmm Yessss!<br>
+Now You are trapped with me<br>
+Forever & ever & ever! Ha ha ha haaa 😈</h1>
+<p>Now you gotta stay with this Small-Brained Dumb-Head, Evil - Mad - Crazy - Cracked Guy forever (InshaAllah)</p>
+<img src="https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyNzVsazJlamc4M3M2Z3B4dnFrYW9tNTR0dWowZjlzZ3BxenI5czJ6OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lY1F6BJjbRO3m/giphy.gif">
+<div class="buttons">
+<button class="btn-pink" onclick="go('p9')">Ahhhhhhh😣😖😱<b>I'm accepting it</button>
+</div>
+</div>
+
+<!-- FINAL -->
+<div class="page" id="p9">
+<h1>Awww!!! I LOVE YOU MY BABY<br>My Little BABY VAMPIRE 🩷</h1>
+<img src="https://i.ibb.co.com/sdyk5LB0/photo-6087009720309845478-y.jpg">
+</div>
 
 <!-- MUSIC -->
 <audio id="music" loop>
-<source src="music.mp3" type="audio/mpeg">
+<source src="https://files.catbox.moe/9k3w8k.mp3" type="audio/mpeg">
 </audio>
-
-<!-- Fallback play button for iPhone autoplay -->
-<button id="playMusicBtn" style="display:none; position:fixed;top:10px;right:10px;padding:10px 15px;">Play Music 🎵</button>
 
 <script>
 function go(id){
     document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
     document.getElementById(id).classList.add('active');
-    playMusic();
+    document.getElementById("music").play();
+}
+
+function mergeBaby(){
+    noBaby.style.display="none";
+    yesBaby.textContent="You Are My Baby";
+    yesBaby.className="btn-pink";
 }
 
 function unlock(){
@@ -214,7 +425,6 @@ document.getElementById("music").addEventListener('ended', () => {
     music.play();
 });
 
-// Hearts animation
 const emojis=["💗","💖","💕","✨","🦇","🦋","💖","🌻","🌷","🌸","🍁","🍫","✨","🎀","🎶","✨","🦇",
 "💫","🤍","🖤","🤎","💜","💙","💚","💛","🦇","🧡","❤️","💕","💞","✨","💝","💖","💗","✨","🦇","💌","💗","💖","💕","🦇","🦋","💖","🌻","🌷","🦇","🌸","🍁","🍫","✨","🎀","🎶","💫","🤍","🖤","🤎","💜","💙","💚","💛","🧡","❤️","💕","💞","💝","💖","💗","💌"];
 setInterval(()=>{
@@ -223,12 +433,13 @@ setInterval(()=>{
     h.textContent=emojis[Math.floor(Math.random()*emojis.length)];
     
     h.style.left=Math.random()*100+"vw";
-    h.style.fontSize=(18 + Math.random()*22) + "px";
+    h.style.fontSize=(18 + Math.random()*22) + "px"; // random size
     h.style.animationDuration=(4+Math.random()*4)+"s";
     
     document.body.appendChild(h);
     setTimeout(()=>h.remove(),8000);
 },300);
+
 </script>
 
 </body>
